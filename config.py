@@ -13,7 +13,7 @@ cfg['data'] = {
     'data_dir': '/home/ymshi/Face/data/MBLLEN_dataset',
     'batch_size': 16,
     'num_workers': 4,
-    'dark_or_low': 'dark'
+    'dark_or_low': 'lowlight'
 }
 cfg['trainer'] = {
     'gpus':[0,1],

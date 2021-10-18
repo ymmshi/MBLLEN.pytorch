@@ -17,11 +17,11 @@ def infer(model, img):
 
 if __name__ == '__main__':
     data_dir = cfg['data']['data_dir']
-    paths = glob(data_dir + '/test_dark/*.*')
+    paths = glob(data_dir + '/test_lowlight/*.*')
     transform = transforms.Compose([transforms.ToTensor()])
     
     model = Model(cfg['model'])
-    model.load_state_dict(torch.load('lightning_logs/version_1/checkpoints/epoch=73-step=39145.ckpt')['state_dict'])
+    model.load_state_dict(torch.load('pretrained_models/lowlight.ckpt')['state_dict'])
     model = model.cuda()
     save_dir = './save_img'
     if not os.path.exists(save_dir):
