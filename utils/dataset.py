@@ -16,7 +16,10 @@ class MBLLENData(data.Dataset):
         self.lows = glob(data_dir + '/%s_%s/*.*' % (mode1, mode2))
         self.highs = glob(data_dir + '/%s/*.*' % mode1)
         assert len(self.lows) == len(self.highs)
+        self.lows.sort()
+        self.highs.sort()
         self.transform = transform
+
 
     def my_transform(self, low_image, high_image, input_size=256):
         w, h = low_image.size

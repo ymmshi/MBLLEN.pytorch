@@ -23,6 +23,7 @@ if __name__ == '__main__':
     model = Model(cfg['model'])
     model.load_state_dict(torch.load('pretrained_models/lowlight.ckpt')['state_dict'])
     model = model.cuda()
+    model.eval()
     save_dir = './save_img'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
